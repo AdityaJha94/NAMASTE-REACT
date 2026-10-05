@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 /**
  * <div id="parent">
  *     <div id= "child">
@@ -11,13 +13,13 @@
  */
 
 const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Nested Testing JS"),
-    React.createElement("h1", {}, "Nested Testing JS 2"),
+  React.createElement("div", { id: "child", key: "child" }, [
+    React.createElement("h1", { key: "child1-h1" }, "Nested Testing JS"),
+    React.createElement("h1", { key: "child1-h2" }, "Nested Testing JS 2"),
   ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "Nested Testing JS"),
-    React.createElement("h1", {}, "Nested Testing JS 2"),
+  React.createElement("div", { id: "child2", key: "child2" }, [
+    React.createElement("h1", { key: "child2-h1" }, "Nested Testing JS"),
+    React.createElement("h1", { key: "child2-h2" }, "Nested Testing JS 2"),
   ]),
 ]);
 
@@ -29,5 +31,6 @@ const heading = React.createElement(
   "hello World from React",
 );
 //console.log(heading);
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
 root.render(parent);
