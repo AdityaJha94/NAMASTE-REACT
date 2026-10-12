@@ -3,3 +3,5 @@ export const CDN_URL =
 
 export const LOGO_URL =
   "https://graphicsfamily.com/wp-content/uploads/edd/2021/06/Editable-Photoshop-Food-Logo-Design-PNG-Transparent.png";
+
+export const MENU_API = "https://namastedev.com/api/v1/listRestaurantMenu/";
