@@ -5,3 +5,7 @@ export const LOGO_URL =
   "https://graphicsfamily.com/wp-content/uploads/edd/2021/06/Editable-Photoshop-Food-Logo-Design-PNG-Transparent.png";
 
 export const MENU_API = "https://namastedev.com/api/v1/listRestaurantMenu/";
+
+/*export const MENU_API =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2446361&lng=73.1235274&";
+*/

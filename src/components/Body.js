@@ -12,7 +12,7 @@ const Body = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  /*const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2446361&lng=73.1235274&collection=83631&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null",
     );
@@ -27,6 +27,23 @@ const Body = () => {
 
     setNewResList(restaurants);
     setFilteredResList(restaurants);
+  };*/
+
+  const fetchData = async () => {
+    try {
+      const data = await fetch("https://namastedev.com/api/v1/listRestaurants");
+      const json = await data.json();
+
+      const restaurants =
+        json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
+          (restaurant) => restaurant?.info,
+        ) || [];
+
+      setNewResList(restaurants);
+      setFilteredResList(restaurants);
+    } catch (error) {
+      console.error("Error fetching restaurants:", error);
+    }
   };
 
   console.log("Body is rendering");
